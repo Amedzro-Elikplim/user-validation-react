@@ -4,7 +4,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Logintemplate from "./components/loginpage";
 import Signuptemplate from './components/signuppage';
-import Logo from  "./components/applogo";
+
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
@@ -15,6 +15,7 @@ function App() {
     
    <Router>
     <div className="container parent">
+      
       <Switch>
       {/*logo of app */}
         

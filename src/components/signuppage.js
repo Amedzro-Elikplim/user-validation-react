@@ -37,7 +37,7 @@ export default class Signuptemplate extends React.Component{
               <div className="row">
                <div className="card signup-card mx-auto">
                    <div className="card-body cardbody">
-                     <h5 className="card-title cardtitle">LOGIN</h5>
+                     <h5 className="card-title cardtitle">REGISTER</h5>
                     
                     {/* start of form for signup */}
                      <form className="forms" onSubmit = {this.handleSubmit}>
