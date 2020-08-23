@@ -1,38 +1,69 @@
-.App {
+* {
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+/*parent div in App.js*/
+.parent{
   text-align: center;
+  align-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/***************************login template**************************************/
+/*card to hold form*/
+.contain .login-card{
+  margin-top: 100px;
+  text-align: center;
+  width: 40rem;
+  height: 25rem;
+  box-shadow: 5px 5px 20px gray;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*title of card*/
+.contain .cardtitle{
+  color: black;
+  font-size: 30px;
+  margin: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*login form from bootstrap*/
+.contain .forms{
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+.contain .forms .register-group{
+  margin-top: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*register link*/
+.contain .forms .register-link{
+    color: gray;
+    cursor: pointer;
 }
+
+/*logo*/
+.stock-tracker-logo{
+    margin-top: 50px;
+    color: gray;
+}
+
+
+
+/**************************signup template********************/
+/*card that hold sign up form*/
+.contain .signup-card{
+  margin-top: 20px;
+  text-align: center;
+  width: 40rem;
+  height: 40rem;
+  box-shadow: 5px 5px 20px gray;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+ 
