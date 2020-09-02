@@ -1,7 +1,8 @@
-import React, { isValidElement } from 'react';
+import React  from 'react';
 import {Link} from 'react-router-dom';
 
-const checkEmail = RegExp(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,5})$/)
+const checkEmail = RegExp(
+    /^([a-z0-9_-]+)@([\da-z-]+)\.([a-z]{2,5})$/);
 
 const isValid = ({...rest}) => {
     const {firstName,lastName,email,password,confirmPassword} = rest;
