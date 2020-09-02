@@ -15,13 +15,9 @@ function App() {
     
    <Router>
     <div className="container parent">
-      
       <Switch>
-      {/*logo of app */}
-        
       {/**login template */} 
       <Route path="/" exact component = {Logintemplate}/>
-
       {/**logout template */}
       <Route path="/account" exact component = {Signuptemplate}/>
       </Switch>

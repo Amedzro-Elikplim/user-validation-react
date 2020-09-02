@@ -1,7 +1,9 @@
  import React from 'react';
  import {Link} from 'react-router-dom';
  
- 
+ const isUserExist = (...rest) => {
+     //check if your is available in the backend
+ }
   
  export default class Logintemplate extends React.Component{
   
@@ -10,56 +12,67 @@
     super(props);
 
     this.state = {
-      userEmail : null,
-      userPassword : null,
-      errorMessage: {
          userEmail: "",
-         userPassword: ""
-      }
+         userPassword:"",
+    }
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+ 
+  handleChange = e => {
+    const {name, value} = e.target;
+    this.setState({[name]: value});
+  }
+
+   //function to validate and submit form
+  handleSubmit = e =>{
+    e.preventDefault();
+    if(isUserExist(this.state)){
+       //route user to dashboard
+    }else{
+      //display error message
+      console.log("user does not exit")
     }
   }
 
-  //prevents auto submit
-  handleSubmit = e =>{
-    e.preventDefault();
-  }
 
-
-  //log something to the console
-  writesomething = () => {
-    console.log("i am a button");
-  }
-
-  //prevent link reloading page
-  handleLink = e => {
-     e.preventDefault();
-     console.log("link is clicked");
-  }
-  
-   
 
    render(){
      return(
       //login card
-     <div className="container contain">
-       <div className="row">   
-       <div className="card login-card mx-auto">
+    <div className="container contain">
+     <div className="row">   
+      <div className="card login-card mx-auto">
        <div className="card-body cardbody">
          <h5 className="card-title cardtitle">LOGIN</h5>
           
             {/* start of form for login */}
             <form className="forms" onSubmit = {this.handleSubmit} noValidate>
                  <div className="form-group">
-                   <label htmlFor="exampleInputEmail1">Email address</label>
-                   <input type="email" className="form-control" id="userEmail" aria-describedby="emailHelp" noValidate/>
+                    <label htmlFor="userEmailID">Email address</label>
+                    <input 
+                    type="email" 
+                    name="userEmail"
+                    className="form-control" 
+                    id="userEmailID" 
+                    onChange={this.handleChange}
+                    value={this.state.userEmail} />
                  </div>
-
+                  
                  <div className="form-group">
-                   <label htmlFor="exampleInputPassword1">Password</label>
-                   <input type="password" className="form-control" id="userPassword" noValidate/>
+                    <label htmlFor="userPasswordID">Password</label>
+                    <input 
+                    type="password"
+                    className="form-control"
+                    id="userPasswordID" 
+                    name="userPassword"
+                    value = {this.state.userPassword}
+                    onChange = {this.handleChange}/>
                  </div>
 
-                 <button type="submit" className="btn btn-primary" onClick = {this.writesomething}>Submit</button>
+                 <button type="submit" className="btn btn-primary">Submit</button>
                  
                  <Link to="/account">
                  <div className="form-group register-group">
@@ -71,7 +84,7 @@
        </div>
      </div>
 
-       </div>
+     </div>
    
     </div>
      )
