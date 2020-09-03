@@ -4,13 +4,13 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
  
 
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {HashRouter, Switch, Route} from 'react-router-dom';
 const Logintemplate = lazy(() => import('./components/loginpage'));
 const Signuptemplate = lazy(() => import('./components/signuppage'))
   
 function App() {
   return (
-   <Router>
+   <HashRouter>
     <div className="container parent">
       <Suspense fallback>
       <Switch>
@@ -19,7 +19,7 @@ function App() {
       </Switch>
       </Suspense>
     </div>
-    </Router>
+    </HashRouter>
    
   );
 }
